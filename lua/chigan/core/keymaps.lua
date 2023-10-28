@@ -73,3 +73,7 @@ map("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explor
 
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
+
+map("n", "<leader>tf", "<cmd>ToggleTerm size=20 direction=float<cr>", { desc = "float" })
+map("n", "<leader>tv", "<cmd>ToggleTerm size=60 direction=vertical<cr>", { desc = "vertical" })
+map("n", "<leader>th", "<cmd>ToggleTerm size=10 direction=horizontal<cr>", { desc = "hirozontal" })

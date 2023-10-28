@@ -13,6 +13,8 @@ return {
 			["gs"] = { name = "+surround" },
 			["]"] = { name = "+next" },
 			["["] = { name = "+prev" },
+			["<leader>e"] = { name = "+nvim-tree" },
+			["<leader>t"] = { name = "+terminal" },
 			["<leader><tab>"] = { name = "+tabs" },
 			["<leader>b"] = { name = "+buffer" },
 			["<leader>c"] = { name = "+code" },
