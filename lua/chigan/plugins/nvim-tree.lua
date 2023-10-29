@@ -14,6 +14,15 @@ return {
 
 		-- configure nvim-tree
 		nvimtree.setup({
+			disable_netrw = true,
+			hijack_netrw = true,
+			hijack_cursor = true,
+			hijack_unnamed_buffer_when_opening = false,
+			sync_root_with_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_root = false,
+			},
 			view = {
 				width = 35,
 				relativenumber = true,
@@ -25,7 +34,14 @@ return {
 				},
 				icons = {
 					glyphs = {
+						default = "󰈚",
+						symlink = "",
 						folder = {
+							empty = "",
+							empty_open = "",
+							open = "",
+							symlink = "",
+							symlink_open = "",
 							arrow_closed = "", -- arrow when folder is closed
 							arrow_open = "", -- arrow when folder is open
 						},
