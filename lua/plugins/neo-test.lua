@@ -5,9 +5,44 @@ return {
     "fredrikaverpil/neotest-golang",
     "nvim-neotest/neotest-python",
     "Issafalcon/neotest-dotnet",
+    "shunsambongi/neotest-testthat",
+    "haydenmeade/neotest-jest",
+    "marilari88/neotest-vitest",
   },
+  keys = {
+    {
+      "<leader>tl",
+      function()
+        require("neotest").run.run_last()
+      end,
+      desc = "Run Last Test",
+    },
+    {
+      "<leader>tL",
+      function()
+        require("neotest").run.run_last({ strategy = "dap" })
+      end,
+      desc = "Debug Last Test",
+    },
+    {
+      "<leader>tw",
+      "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+      desc = "Run Watch",
+    },
+  },
+
   opts = {
     adapters = {
+      ["neotest-jest"] = {
+        jestCommand = "npm test --",
+        jestConfigFile = "custom.jest.config.ts",
+        env = { CI = true },
+        cwd = function()
+          return vim.fn.getcwd()
+        end,
+      },
+      ["neotest-vitest"] = {},
+      ["neotest-testthat"] = {},
       ["neotest-python"] = {
         -- Here you can specify the settings for the adapter, i.e.
         -- runner = "pytest",
