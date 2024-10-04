@@ -51,6 +51,7 @@ return {
       "java",
       "graphql",
       "angular",
+      "dart",
     },
   },
 }
