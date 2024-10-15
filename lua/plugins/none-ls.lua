@@ -8,10 +8,10 @@ return {
       root_dir = require("null-ls.utils").root_pattern(".null-ls-root", ".neoconf.json", "Makefile", ".git"),
       sources = {
         nls.builtins.formatting.prettier,
-        nls.builtins.formatting.fish_indent,
+        -- nls.builtins.formatting.fish_indent,
+        -- nls.builtins.diagnostics.fish,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.shfmt,
-        nls.builtins.diagnostics.fish,
         nls.builtins.code_actions.gomodifytags,
         nls.builtins.code_actions.impl,
         nls.builtins.formatting.goimports,
