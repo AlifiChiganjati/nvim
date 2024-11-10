@@ -34,6 +34,8 @@ return {
       ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
       cs = { "csharpier" },
       php = { "php_cs_fixer" },
+      ruby = { "erb_formatter" },
+      eruby = { "erb_formatter" },
     },
   },
 }
