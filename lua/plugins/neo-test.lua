@@ -4,11 +4,9 @@ return {
   dependencies = {
     "fredrikaverpil/neotest-golang",
     "nvim-neotest/neotest-python",
-    "Issafalcon/neotest-dotnet",
     "shunsambongi/neotest-testthat",
     "haydenmeade/neotest-jest",
     "marilari88/neotest-vitest",
-    "olimorris/neotest-rspec",
   },
   keys = {
     {
@@ -49,25 +47,10 @@ return {
         -- runner = "pytest",
         -- python = ".venv/bin/python",
       },
-      ["neotest-dotnet"] = {
-        -- Here we can set options for neotest-dotnet
-      },
       ["neotest-golang"] = {
         -- Here we can set options for neotest-golang, e.g.
         -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
         dap_go_enabled = true, -- requires leoluz/nvim-dap-go
-      },
-      ["neotest-zig"] = {},
-      ["rustaceanvim.neotest"] = {},
-      ["neotest-rspec"] = {
-        -- NOTE: By default neotest-rspec uses the system wide rspec gem instead of the one through bundler
-        -- rspec_cmd = function()
-        --   return vim.tbl_flatten({
-        --     "bundle",
-        --     "exec",
-        --     "rspec",
-        --   })
-        -- end,
       },
     },
   },
