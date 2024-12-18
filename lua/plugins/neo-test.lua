@@ -4,7 +4,6 @@ return {
   dependencies = {
     "fredrikaverpil/neotest-golang",
     "nvim-neotest/neotest-python",
-    "shunsambongi/neotest-testthat",
     "haydenmeade/neotest-jest",
     "marilari88/neotest-vitest",
   },
@@ -29,29 +28,57 @@ return {
       desc = "Run Watch",
     },
   },
-
-  opts = {
-    adapters = {
-      ["neotest-jest"] = {
+  opts = function(_, opts)
+    table.insert(
+      opts.adapters,
+      require("neotest-jest")({
         jestCommand = "npm test --",
         jestConfigFile = "custom.jest.config.ts",
         env = { CI = true },
         cwd = function()
           return vim.fn.getcwd()
         end,
-      },
-      ["neotest-vitest"] = {},
-      ["neotest-testthat"] = {},
-      ["neotest-python"] = {
+      })
+    )
+    table.insert(opts.adapters, require("neotest-vitest"))
+    table.insert(
+      opts.adapters,
+      require("neotest-python")({
         -- Here you can specify the settings for the adapter, i.e.
-        -- runner = "pytest",
-        -- python = ".venv/bin/python",
-      },
-      ["neotest-golang"] = {
+        --       -- runner = "pytest",
+        --       -- python = ".venv/bin/python",
+      })
+    )
+    table.insert(
+      opts.adapters,
+      require("neotest-golang")({
         -- Here we can set options for neotest-golang, e.g.
-        -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+        --       -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
         dap_go_enabled = true, -- requires leoluz/nvim-dap-go
-      },
-    },
-  },
+      })
+    )
+  end,
+  -- opts = {
+  --   adapters = {
+  --     ["neotest-jest"] = {
+  --       jestCommand = "npm test --",
+  --       jestConfigFile = "custom.jest.config.ts",
+  --       env = { CI = true },
+  --       cwd = function()
+  --         return vim.fn.getcwd()
+  --       end,
+  --     },
+  --     ["neotest-vitest"] = {},
+  --     ["neotest-testthat"] = {},
+  --     ["neotest-python"] = {
+  --       -- Here you can specify the settings for the adapter, i.e.
+  --       -- runner = "pytest",
+  --       -- python = ".venv/bin/python",
+  --     },
+  --     ["neotest-golang"] = {
+  --       -- Here we can set options for neotest-golang, e.g.
+  --       -- go_test_args = { "-v", "-race", "-count=1", "-timeout=60s" },
+  --       dap_go_enabled = true, -- requires leoluz/nvim-dap-go
+  --     },
+  --   },
 }
