@@ -1,5 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
+  enable = true,
   event = "LazyFile",
   opts = {
     signs = {

@@ -1,6 +1,6 @@
 return {
   "allaman/emoji.nvim",
-  version = "*", -- optionally pin to a tag
+  version = "1.0.0", -- optionally pin to a tag
   ft = "markdown", -- adjust to your needs
   dependencies = {
     -- util for handling paths
@@ -14,13 +14,12 @@ return {
   },
   opts = {
     -- default is false
-    -- enable_cmp_integration = true,
+    enable_cmp_integration = true,
     -- optional if your plugin installation directory
     -- is not vim.fn.stdpath("data") .. "/lazy/
-    -- plugin_path = vim.fn.expand("$HOME/.local/share/nvim/lazy/emoji.nvim/lua/data/emojis.json"),
+    -- plugin_path = vim.fn.expand("$HOME/plugins/"),
   },
   config = function(_, opts)
-    -- require("telescope").load_extension("emoji")
     require("emoji").setup(opts)
     -- optional for telescope integration
     local ts = require("telescope").load_extension("emoji")
