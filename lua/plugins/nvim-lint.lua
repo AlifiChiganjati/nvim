@@ -5,6 +5,7 @@ return {
     opts.linters_by_ft = {
       dockerfile = { "hadolint" },
       markdown = { "markdownlint-cli2" },
+      -- php = { "phpcs" },
     }
     opts.linters = {}
   end,
