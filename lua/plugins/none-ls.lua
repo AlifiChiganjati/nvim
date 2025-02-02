@@ -19,7 +19,8 @@ return {
         nls.builtins.formatting.black,
         nls.builtins.diagnostics.markdownlint_cli2,
         nls.builtins.formatting.phpcsfixer,
-        nls.builtins.diagnostics.phpcs
+        nls.builtins.diagnostics.phpcs,
+        nls.builtins.diagnostics.hadolint,
       },
     }
   end,
