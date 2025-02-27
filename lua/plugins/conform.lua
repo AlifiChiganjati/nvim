@@ -27,7 +27,7 @@ return {
       go = { "goimports", "gofumpt" },
       ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
       ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-      php = { "php_cs_fixer" },
+      php = { "pint", "php_cs_fixer" },
       blade = { "blade-formatter" },
     },
   },
