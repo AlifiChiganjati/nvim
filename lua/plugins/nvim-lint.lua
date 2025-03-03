@@ -6,7 +6,7 @@ return {
       dockerfile = { "hadolint" },
       markdown = { "markdownlint-cli2" },
       -- php = { "phpcs" },
-      php = { "phpstan" },
+      php = {},
     }
     opts.linters = {}
   end,

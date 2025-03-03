@@ -22,7 +22,7 @@ return {
           nls.builtins.diagnostics.markdownlint_cli2,
           nls.builtins.formatting.pint,
           nls.builtins.diagnostics.phpstan,
-          nls.builtins.formatting.phpcsfixer,
+          -- nls.builtins.formatting.phpcsfixer,
           -- nls.builtins.diagnostics.phpcs,
           nls.builtins.diagnostics.hadolint,
         },
