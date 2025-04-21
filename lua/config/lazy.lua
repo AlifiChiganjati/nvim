@@ -21,8 +21,8 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "lazyvim.plugins.extras.ai.codeium" },
     { import = "lazyvim.plugins.extras.coding.neogen" },
+    { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.coding.mini-comment" },
-    { import = "lazyvim.plugins.extras.coding.mini-snippets" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.yanky" },
     { import = "lazyvim.plugins.extras.test.core" },
