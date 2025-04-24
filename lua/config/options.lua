@@ -6,6 +6,7 @@ vim.g.lazyvim_picker = "fzf"
 vim.g.lazyvim_eslint_auto_format = true
 vim.g.lazyvim_php_lsp = "intelephense"
 vim.g.lazyvim_python_lsp = "pyright"
+vim.g.lazyvim_blink_main = false
 
 vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-") -- hyphenated words recognized by searches
