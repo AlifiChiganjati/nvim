@@ -14,10 +14,11 @@ return {
       "phpstan",
       "pint",
       "css-lsp",
-      "deno",
+      -- "deno",
       "eslint_d",
       "blade-formatter",
       "phpactor",
+      "rust-analyzer",
     },
   },
   ---@param opts MasonSettings | {ensure_installed: string[]}

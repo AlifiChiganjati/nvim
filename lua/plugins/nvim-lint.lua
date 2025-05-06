@@ -7,6 +7,7 @@ return {
       markdown = { "markdownlint-cli2" },
       php = { "phpstan" },
       sql = { "sqlfluff" },
+      rust = { "bacon" },
     }
     opts.linters = {}
   end,

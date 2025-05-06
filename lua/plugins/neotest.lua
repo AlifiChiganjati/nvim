@@ -25,7 +25,7 @@ return {
     },
     {
       "<leader>tw",
-      "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch ' })<cr>",
+      "<cmd>lua require('neotest').run.run({ jestCommand = 'jest --watch' })<cr>",
       desc = "Run Watch",
     },
   },

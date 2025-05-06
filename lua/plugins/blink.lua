@@ -16,7 +16,13 @@ return {
       opts = {},
       version = not vim.g.lazyvim_blink_main and "*",
     },
-    "allaman/emoji.nvim",
+    {
+      -- Add the blade-nav.nvim plugin which provides Goto File capabilities
+      -- for Blade files.
+      "ricardoramirezr/blade-nav.nvim",
+      dependencies = {},
+      ft = { "blade", "php" }, -- optional, improves startup time
+    },
   },
   event = "InsertEnter",
 
@@ -64,20 +70,18 @@ return {
     sources = {
       -- adding any nvim-cmp sources here will enable them
       -- with blink.compat
-      compat = {},
-      default = { "lsp", "path", "snippets", "buffer", "emoji" },
+      compat = { "codeium", "bladenav" },
+      default = { "lsp", "path", "snippets", "buffer" },
       providers = {
-        emoji = {
-          name = "emoji",
-          module = "blink.compat.source",
-          -- overwrite kind of suggestion
-          transform_items = function(ctx, items)
-            local kind = require("blink.cmp.types").CompletionItemKind.Text
-            for i = 1, #items do
-              items[i].kind = kind
-            end
-            return items
-          end,
+        bladenav = {
+          kind = "BladeNav",
+          score_offset = 100,
+          async = true,
+        },
+        codeium = {
+          kind = "Codeium",
+          score_offset = 100,
+          async = true,
         },
       },
     },

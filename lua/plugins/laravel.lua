@@ -16,15 +16,15 @@ return {
       { "<leader>lm", ":Laravel related<cr>" },
     },
     event = { "VeryLazy" },
-    config = true,
     opts = {
       lsp_server = "intelephense",
       features = {
-        -- null_ls = { enable = false },
         pickers = {
+          enable = true,
           provider = "fzf-lua",
         },
       },
     },
+    config = true,
   },
 }
